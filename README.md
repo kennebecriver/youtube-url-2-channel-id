@@ -3,7 +3,7 @@
 (async () => {
     const urls = ['https://www.youtube.com/c/ivarlamov','https://www.youtube.com/c/UtopiaShow']
     const result = []    
-    for (var u of urls) {
+    for (const u of urls) {
         try {
             const htmlRaw = await fetch(u,{method:"GET"}).then(e=>e.text())
             const playlistId = /"channelUrl":"(.*)","isFamilySafe"/.exec(htmlRaw)[1]
